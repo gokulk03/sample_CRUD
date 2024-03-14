@@ -17,6 +17,11 @@ class UserService {
         return await this.userController.addUser(first_name, last_name);
     }
 
+    deleteUser = async(id)=>{
+        return await this.userController.deleteUser(id);
+    }
+
+
     editUser = async (id, first_name, last_name) => {
         return await this.userController.editUser(id, first_name, last_name);
     }

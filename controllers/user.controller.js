@@ -22,6 +22,10 @@ class UserController {
     editUser = async (id, first_name, last_name) => {
         return await this.userBAL.editUser(id, first_name, last_name);
     }
+
+    deleteUser = async(id)=>{
+        return await this.userBAL.deleteUser(id);
+    }
 }
 
 module.exports = UserController;

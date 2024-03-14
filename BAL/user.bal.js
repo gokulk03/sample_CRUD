@@ -12,7 +12,6 @@ class UserBAL {
 
     async getUserById(id) {
         this.userDAL = new UserDAL();
-    
         return await this.userDAL.getUserById(id);
     }
 
@@ -24,6 +23,11 @@ class UserBAL {
     async editUser(id, first_name, last_name) {
         this.userDAL = new UserDAL();
         return await this.userDAL.editUser(id, first_name, last_name);
+    }
+
+    async deleteUser(id){
+        this.userDAL = new UserDAL();
+        return await this.userDAL.deleteUser(id);
     }
 }
 

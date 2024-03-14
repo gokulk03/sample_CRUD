@@ -29,4 +29,12 @@ router.put('/:id', (req, res) => {
         .catch(err => res.status(400).json({ error: err.message }));
 }); 
 
+
+router.delete('/:id',(req,res)=>{
+    userService.deleteUser(req.params.id)
+        .then(deletedUser => res.json(deletedUser))
+        .catch(err => res.status(500).json({ error: err.message}));
+    
+});
+
 module.exports = router;
