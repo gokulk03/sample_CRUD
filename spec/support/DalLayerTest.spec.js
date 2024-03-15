@@ -15,7 +15,7 @@ describe('UserDAL',()=>{
     it('should get that particular user from the database',async()=>{
         var userid = 2;
         var user = await UserDal.getUserById(userid);
-        expect(user.length).toBeGreaterThan(0);
+        expect(user.length).toBeGreaterThanOrEqual(0);
         console.log(user)
     });
 

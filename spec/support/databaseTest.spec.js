@@ -1,7 +1,15 @@
-const db = require('../../database.js');
+const {databaseInstance} = require('../../database.js');
 
 describe('Database',()=>{
-    it('should connect to the database',()=>{
-        expect(db.isConnected()).toBe(true);
+
+    let db;
+    beforeEach(()=>{
+        db = databaseInstance;
     })
+    it('should connect to the database',()=>{
+        
+        expect(db.isConnected()).toBe(true);
+
+    })
+    
 })

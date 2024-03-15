@@ -14,7 +14,10 @@ class UserDAL {
         if (isNaN(id)) {
             throw new Error('User ID must be a number');
         }
+    
         const [record] = await mysqlPool.query('SELECT * FROM user WHERE id= ?', [id]);
+
+
         return record;
     }
     

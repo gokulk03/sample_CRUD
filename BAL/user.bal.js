@@ -21,8 +21,15 @@ class UserBAL {
     }
 
     async editUser(id, first_name, last_name) {
-        this.userDAL = new UserDAL();
-        return await this.userDAL.editUser(id, first_name, last_name);
+        try{
+            this.userDAL = new UserDAL();
+            const updatedUser =  await this.userDAL.editUser(id, first_name, last_name);
+            return updatedUser;
+
+        }
+        catch(error){
+            throw new Error('Error updating user'+error.message);
+        }   
     }
 
     async deleteUser(id){
@@ -31,4 +38,8 @@ class UserBAL {
     }
 }
 
+
+
+const generateRandomString = Math.random().toString(36).substring(2,7);
+console.log(generateRandomString);
 module.exports = UserBAL;
